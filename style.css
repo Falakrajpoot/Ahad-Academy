@@ -1,0 +1,598 @@
+/* ================================
+   Global Styles & Variables
+================================== */
+:root {
+  --primary: #2563eb;
+  --secondary: #1e40af;
+  --bg: #ffffff;
+  --fg: #1f2937;
+  --fg-strong: #111827;
+  --muted: #6b7280;
+  --card-bg: #f9fafb;
+  --border: #e5e7eb;
+  --radius: 14px;
+  --shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode {
+  --bg: #1e3a8a;
+  --fg: #f9fafb;
+  --fg-strong: #ffffff;
+  --muted: #cbd5e1;
+  --card-bg: #1e40af;
+  --border: #334155;
+  --shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ================================
+   Preloader
+================================== */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+#preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#preloader p {
+  margin-top: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--fg);
+}
+
+.loader {
+  width: 55px;
+  height: 55px;
+  border: 5px solid var(--border);
+  border-top: 5px solid var(--fg);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ================================
+   Navbar
+================================== */
+/* ================================
+   Navbar (Glass Effect)
+================================== */
+.sticky-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.65);
+  /* light mode */
+  backdrop-filter: blur(0.6px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--shadow);
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+
+body.dark-mode .sticky-header {
+  background: rgba(30, 58, 138, 0.65);
+  /* dark mode glass */
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 5%;
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+}
+
+.nav-links a {
+  font-weight: 500;
+  color: var(--fg);
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+.btn-toggle {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.btn-toggle:hover {
+  background: var(--secondary);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--fg);
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 69px;
+    right: -100%;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.65);
+    /* light mode */
+    backdrop-filter: blur(0.6px);
+    width: 220px;
+    text-align: right;
+    padding: 20px;
+    gap: 16px;
+    transition: right 0.3s ease;
+            border-bottom-left-radius: 139px;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* ================================
+   Hero
+================================== */
+.hero {
+  height: 100vh;
+  background: url('img/hero-bg.png') center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  max-width: 700px;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+.hero-content h1 span {
+  color: var(--primary);
+}
+
+.hero-content p {
+  margin: 18px 0 26px;
+  font-size: 1.1rem;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: var(--radius);
+  transition: background 0.3s ease;
+}
+
+.hero-btn:hover {
+  background: var(--secondary);
+}
+
+/* ================================
+   Courses
+================================== */
+.courses {
+  padding: 90px 20px;
+  text-align: center;
+}
+
+.courses h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  margin-bottom: 28px;
+  color: var(--fg-strong);
+}
+
+.course-list {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.course-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 26px 20px;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, .16);
+}
+
+.course-card i {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.course-card h3 {
+  margin-bottom: 8px;
+  color: var(--fg-strong);
+}
+
+/* ================================
+   Trainers
+================================== */
+.trainers {
+  padding: 90px 20px;
+  text-align: center;
+}
+
+.trainers h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  margin-bottom: 28px;
+  color: var(--fg-strong);
+}
+
+.trainer-list {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.trainer-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.trainer-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, .16);
+}
+
+.trainer-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  margin-bottom: 12px;
+}
+
+.trainer-card h3 {
+  margin: 8px 0 4px;
+  font-size: 1.1rem;
+  color: var(--fg-strong);
+}
+
+.trainer-card p {
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+/* ================================
+   Trainer Modals
+================================== */
+/* ================================
+   Trainer Modals (Fixed)
+================================== */
+.modal {
+  display: none;
+  /* always hidden first */
+  position: fixed;
+  z-index: 1500;
+  /* lower than preloader (2000) */
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-content {
+  background: var(--card-bg);
+  padding: 24px;
+  border-radius: var(--radius);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  box-shadow: var(--shadow);
+  position: relative;
+  animation: fadeIn 0.4s ease;
+}
+
+.modal-content img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 14px;
+}
+
+.modal-content h3 {
+  margin-bottom: 10px;
+  color: var(--fg-strong);
+}
+
+.modal-content p {
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+
+.close {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: var(--muted);
+  transition: color 0.3s;
+}
+
+.close:hover {
+  color: var(--primary);
+}
+
+.modal-socials a {
+  margin: 0 8px;
+  font-size: 1.3rem;
+  color: var(--primary);
+  transition: color 0.3s;
+}
+
+.modal-socials a:hover {
+  color: var(--secondary);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* ================================
+   About
+================================== */
+.about {
+  padding: 90px 20px;
+  background: var(--card-bg);
+}
+
+.about-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  align-items: center;
+}
+
+.about-container img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.about-text h2 {
+  margin-bottom: 16px;
+  color: var(--fg-strong);
+}
+
+.about-text p {
+  margin-bottom: 20px;
+  color: var(--muted);
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: var(--radius);
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: var(--secondary);
+}
+
+/* ================================
+   Contact
+================================== */
+.contact {
+  padding: 90px 20px;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  margin-bottom: 22px;
+  color: var(--fg-strong);
+}
+
+.glass-form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 28px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
+}
+
+.glass-form input,
+.glass-form textarea {
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  outline: none;
+}
+
+.glass-form textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+.glass-form button {
+  padding: 12px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.glass-form button:hover {
+  background: var(--secondary);
+}
+
+#formMessage {
+  margin-top: 12px;
+  font-weight: 500;
+}
+
+/* ================================
+   Footer
+================================== */
+footer {
+  background: var(--secondary);
+  color: #fff;
+  text-align: center;
+  padding: 18px 20px;
+}
+
+footer .socials {
+  margin-top: 10px;
+}
+
+footer .socials a {
+  margin: 0 8px;
+  font-size: 1.2rem;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+footer .socials a:hover {
+  color: var(--primary);
+}
+
+/* ================================
+   Animations
+================================== */
+section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}

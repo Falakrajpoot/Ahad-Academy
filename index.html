@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Talc | Ahad Academy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TALC | Ahad Academy</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
   <script src="https://kit.fontawesome.com/a2e0b5b72e.js" crossorigin="anonymous"></script>
 </head>
+
 <body class="light-mode">
 
   <!-- Preloader -->
@@ -20,7 +22,7 @@
   <!-- Header -->
   <header class="sticky-header">
     <nav class="navbar">
-      <div class="logo">Talc | Ahad Academy</div>
+      <div class="logo">TALC | Ahad Academy</div>
       <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
       <ul class="nav-links" id="navLinks">
         <li><a href="#home">Home</a></li>
@@ -38,7 +40,7 @@
   <section id="home" class="hero">
     <div class="overlay"></div>
     <div class="hero-content">
-      <h1>Unlock Your Potential with <span>Talc | Ahad Academy</span></h1>
+      <h1>Unlock Your Potential with <span><u>TALC | Ahad Academy</u></span></h1>
       <p>Learn skills that prepare you for tomorrow’s opportunities.</p>
       <a href="#it-courses" class="btn hero-btn">Explore Courses</a>
     </div>
@@ -48,10 +50,22 @@
   <section id="it-courses" class="courses">
     <h2>I.T Courses</h2>
     <div class="course-list">
-      <div class="course-card"><i class="fas fa-code"></i><h3>Web Development</h3><p>Master HTML, CSS, and JavaScript.</p></div>
-      <div class="course-card"><i class="fas fa-database"></i><h3>Database Management</h3><p>Learn MySQL, MongoDB, and SQL.</p></div>
-      <div class="course-card"><i class="fas fa-shield-alt"></i><h3>Cybersecurity</h3><p>Understand ethical hacking.</p></div>
-      <div class="course-card"><i class="fas fa-network-wired"></i><h3>Networking</h3><p>Explore computer networks and protocols.</p></div>
+      <div class="course-card"><i class="fas fa-code"></i>
+        <h3>Web Development</h3>
+        <p>Master HTML, CSS, and JavaScript.</p>
+      </div>
+      <div class="course-card"><i class="fas fa-database"></i>
+        <h3>Digital Marketing</h3>
+        <p>Learn Social Media Marketing, SEO, Email Marketing and Meta Ads.</p>
+      </div>
+      <div class="course-card"><i class="fas fa-shield-alt"></i>
+        <h3>Cybersecurity</h3>
+        <p>Understand ethical hacking.</p>
+      </div>
+      <div class="course-card"><i class="fas fa-network-wired"></i>
+        <h3>Graphics Designing</h3>
+        <p>Explore computer neols.</p>
+      </div>
     </div>
   </section>
 
@@ -59,102 +73,122 @@
   <section id="language-courses" class="courses">
     <h2>Language Courses</h2>
     <div class="course-list">
-      <div class="course-card"><i class="fas fa-language"></i><h3>English Language</h3><p>Improve grammar, speaking & writing.</p></div>
-      <div class="course-card"><i class="fas fa-comments"></i><h3>Arabic Language</h3><p>Learn Arabic for daily communication.</p></div>
-      <div class="course-card"><i class="fas fa-globe"></i><h3>Chinese Language</h3><p>Master Mandarin for opportunities.</p></div>
-      <div class="course-card"><i class="fas fa-book"></i><h3>French Language</h3><p>Develop reading & conversational French.</p></div>
+      <div class="course-card"><i class="fas fa-language"></i>
+        <h3>Primer</h3>
+        <p>.</p>
+      </div>
+      <div class="course-card"><i class="fas fa-comments"></i>
+        <h3>Arabic Language</h3>
+        <p>Learn Arabic for daily communication.</p>
+      </div>
+      <div class="course-card"><i class="fas fa-globe"></i>
+        <h3>Chinese Language</h3>
+        <p>Master Mandarin for opportunities.</p>
+      </div>
+      <div class="course-card"><i class="fas fa-book"></i>
+        <h3>French Language</h3>
+        <p>Develop reading & conversational French.</p>
+      </div>
     </div>
   </section>
 
   <!-- Trainers Section -->
   <!-- Trainers Section -->
-<section id="trainers" class="trainers">
-  <h2>Meet Our Trainers</h2>
-  <div class="trainer-list">
-    <div class="trainer-card" data-trainer="1">
-      <img src="img/Sir Asif.jpg" alt="Trainer 1"/>
+  <section id="trainers" class="trainers">
+    <h2>Meet Our Trainers</h2>
+    <div class="trainer-list">
+      <div class="trainer-card" data-trainer="1">
+        <img src="img/Sir Asif.jpg" alt="Trainer 1" />
+        <h3>Sir Raja Asif</h3>
+        <p>Director Of Ahad Academy </p>
+      </div>
+      <div class="trainer-card" data-trainer="2">
+        <img src="img/Sir Falak.jpg" alt="Trainer 2" />
+        <h3>Sir Falak Rajpoot</h3>
+        <p>I.T Developer & Trainer</p>
+      </div>
+      <div class="trainer-card" data-trainer="3">
+        <img src="img/Untitled design.png" alt="Trainer 3" />
+        <h3>Miss Kashaf</h3>
+        <p>English Language Instructor</p>
+      </div>
+      <div class="trainer-card" data-trainer="4">
+        <img src="img/Untitled design (1).png" alt="Trainer 4" />
+        <h3>Abiha Zaheer</h3>
+        <p>Administration & Front-desk</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trainer Modals -->
+  <div id="trainerModal1" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <img src="img/Sir Asif.jpg" alt="Ali Khan">
       <h3>Sir Raja Asif</h3>
-      <p>Director Of Ahad Academy </p>
-    </div>
-    <div class="trainer-card" data-trainer="2">
-      <img src="img/Sir Falak.jpg" alt="Trainer 2"/>
-      <h3>Falak Rajpoot</h3>
-      <p>I.T Developer & Trainer</p>
-    </div>
-    <div class="trainer-card" data-trainer="3">
-      <img src="img/trainer3.jpg" alt="Trainer 3"/>
-      <h3>John Smith</h3>
-      <p>English Language Instructor</p>
-    </div>
-    <div class="trainer-card" data-trainer="4">
-      <img src="img/trainer4.jpg" alt="Trainer 4"/>
-      <h3>Fatima Noor</h3>
-      <p>Arabic Language Teacher</p>
+      <p>Transformational Leader & Inspirational Educator | English Language Expert | Motivational Speaker | Empowering
+        Minds, Unlocking Potential, and Igniting Passion for Language Learning and Personal Growth</p>
+      <div class="modal-socials">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+      </div>
     </div>
   </div>
-</section>
 
-<!-- Trainer Modals -->
-<div id="trainerModal1" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <img src="img/Sir Asif.jpg" alt="Ali Khan">
-    <h3>Sir Raja Asif</h3>
-    <p>Experienced English Language Instructor helping students improve communication, grammar, and business English fluency.</p>
-    <div class="modal-socials">
-      <a href="#"><i class="fab fa-linkedin"></i></a>
-      <a href="#"><i class="fab fa-github"></i></a>
+  <div id="trainerModal2" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <img src="img/Sir Falak.jpg" alt="Sara Ahmed">
+      <h3>Sir Falak Rajpoot</h3>
+      <p>A passionate IT Developer with a strong foundation in full stack development, graphics design, and ethical
+        hacking. Specialize in building secure, scalable, and user-friendly applications — from modern web platforms to
+        advanced system-level solutions.</p>
+      <div class="modal-socials">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
     </div>
   </div>
-</div>
 
-<div id="trainerModal2" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <img src="img/Sir Falak.jpg" alt="Sara Ahmed">
-    <h3>Sir Falak Rajpoot</h3>
-    <p>A passionate IT Developer with a strong foundation in full stack development, graphics design, and ethical hacking. Specialize in building secure, scalable, and user-friendly applications — from modern web platforms to advanced system-level solutions.</p>
-    <div class="modal-socials">
-      <a href="#"><i class="fab fa-linkedin"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
+  <div id="trainerModal3" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <img src="img/Untitled design.png" alt="John Smith">
+      <h3>Miss Kashaf
+      </h3>
+      <p>Passionate English language teacher with 5 years of experience in guiding students to fluency. Skilled in
+        creating engaging lesson plans. Committed to empowering students to achieve their language goals.</p>
+      <div class="modal-socials">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+      </div>
     </div>
   </div>
-</div>
 
-<div id="trainerModal3" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <img src="img/trainer3.jpg" alt="John Smith">
-    <h3>John Smith</h3>
-    <p>Experienced English Language Instructor helping students improve communication, grammar, and business English fluency.</p>
-    <div class="modal-socials">
-      <a href="#"><i class="fab fa-linkedin"></i></a>
-      <a href="#"><i class="fab fa-facebook"></i></a>
+  <div id="trainerModal4" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <img src="img/Untitled design (1).png" alt="Fatima Noor">
+      <h3>Abiha Zaheer</h3>
+      <p>Warm and welcoming receptionist
+        language learners and faculty at True American language center.
+        Skilled in front desk management, student coordination, and administrative tasks.</p>
+      <div class="modal-socials">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
     </div>
   </div>
-</div>
-
-<div id="trainerModal4" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <img src="img/trainer4.jpg" alt="Fatima Noor">
-    <h3>Fatima Noor</h3>
-    <p>Arabic Language Teacher with expertise in conversational and formal Arabic for students and professionals alike.</p>
-    <div class="modal-socials">
-      <a href="#"><i class="fab fa-linkedin"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-    </div>
-  </div>
-</div>
 
 
   <!-- About -->
   <section id="about" class="about">
     <div class="about-container">
-      <img src="img/logo.png" alt="About Academy"/>
+      <img src="img/logo.png" alt="About Academy" />
       <div class="about-text">
         <h2>About Us</h2>
-        <p>At Ahad Academy, we blend technology and innovation with real-world learning to empower students globally.</p>
+        <p>At Ahad Academy, we blend technology and innovation with real-world learning to empower students globally.
+        </p>
         <a href="#contact" class="btn">Join Us</a>
       </div>
     </div>
@@ -164,8 +198,8 @@
   <section id="contact" class="contact">
     <h2>Get in Touch</h2>
     <form id="contactForm" class="glass-form">
-      <input type="text" id="name" placeholder="Your Name" required/>
-      <input type="email" id="email" placeholder="Your Email" required/>
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
       <textarea id="message" placeholder="Your Message" required></textarea>
       <button type="submit" class="btn">Send Message</button>
     </form>
@@ -174,7 +208,7 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Talc | Ahad Academy. All Rights Reserved.</p>
+    <p>&copy; 2025 TALC | Ahad Academy. All Rights Reserved.</p>
     <div class="socials">
       <a href="#"><i class="fab fa-facebook"></i></a>
       <a href="#"><i class="fab fa-twitter"></i></a>
@@ -184,4 +218,5 @@
 
   <script src="app.js"></script>
 </body>
+
 </html>

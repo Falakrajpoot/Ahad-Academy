@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard | TALC Ahad Academy</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 20px;
+    }
+    .admin-container {
+      background: var(--card-bg);
+      padding: 30px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      width: 100%;
+      max-width: 600px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: var(--fg-strong);
+    }
+    .input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 12px;
+    }
+    button {
+      padding: 10px 16px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: var(--radius);
+      cursor: pointer;
+      width: 100%;
+    }
+    button:hover {
+      background: var(--secondary);
+    }
+    .logout-btn {
+      background: crimson;
+    }
+    .message-card {
+      border: 1px solid var(--border);
+      background: var(--bg);
+      padding: 14px;
+      border-radius: var(--radius);
+      margin-bottom: 12px;
+    }
+    .message-card p {
+      margin: 4px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="loginSection" class="admin-container">
+    <h2>Admin Login</h2>
+    <input type="email" id="adminEmail" class="input" placeholder="Admin Email" required>
+    <input type="password" id="adminPassword" class="input" placeholder="Password" required>
+    <button id="loginBtn">Login</button>
+    <p id="loginMessage" style="margin-top:10px;text-align:center;"></p>
+  </div>
+
+  <div id="dashboardSection" class="admin-container" style="display:none;">
+    <h2>Contact Messages</h2>
+    <button id="logoutBtn" class="logout-btn">Logout</button>
+    <div id="messagesContainer" style="margin-top:20px;"></div>
+  </div>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>

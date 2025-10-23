@@ -56,36 +56,6 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   });
 });
 
-// // ================== Contact Form ==================
-// const contactForm = document.getElementById("contactForm");
-// if (contactForm) {
-//   contactForm.addEventListener("submit", function(e) {
-//     e.preventDefault();
-
-//     const name = document.getElementById("name").value.trim();
-//     const email = document.getElementById("email").value.trim();
-//     const message = document.getElementById("message").value.trim();
-//     const formMessage = document.getElementById("formMessage");
-
-//     if (!name || !email || !message) {
-//       formMessage.style.color = "red";
-//       formMessage.textContent = "⚠ Please fill in all fields.";
-//       return;
-//     }
-
-//     const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,}$/i;
-//     if (!emailPattern.test(email)) {
-//       formMessage.style.color = "red";
-//       formMessage.textContent = "⚠ Please enter a valid email address.";
-//       return;
-//     }
-
-//     formMessage.style.color = "green";
-//     formMessage.textContent = "✅ Thank you! Your message has been sent.";
-//     contactForm.reset();
-//   });
-// }
-
 // ================== Fade-in on Scroll ==================
 const sections = document.querySelectorAll("section");
 const observerOptions = { threshold: 0.2 };
@@ -114,6 +84,7 @@ window.addEventListener("load", () => {
   const preloader = document.getElementById("preloader");
   if (preloader) preloader.classList.add("hidden");
 });
+
 // ================== Trainer Modals ==================
 const trainerCards = document.querySelectorAll(".trainer-card");
 const modals = document.querySelectorAll(".modal");
@@ -133,7 +104,6 @@ closeBtns.forEach(btn => {
   });
 });
 
-// Close modal when clicking outside
 window.addEventListener("click", (e) => {
   modals.forEach(modal => {
     if (e.target === modal) modal.style.display = "none";

@@ -201,7 +201,7 @@
   <!-- Contact -->
   <section id="contact" class="contact">
     <h2>Get in Touch</h2>
-    <form name="contact" method="POST" netlify id="contactForm" class="glass-form">
+    <form id="contactForm" class="glass-form">
       <input type="text" id="name" placeholder="Your Name" required />
       <input type="email" id="email" placeholder="Your Email" required />
       <textarea id="message" placeholder="Your Message" required></textarea>
@@ -221,6 +221,52 @@
   </footer>
 
   <script src="app.js"></script>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js";
+    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore.js";
+
+    // 🧠 Replace with your Firebase project configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyDFdtbWCk1WQuUpO-_zGZimRxHJYylrsNg",
+      authDomain: "academy-7c5e3.firebaseapp.com",
+      projectId: "academy-7c5e3",
+      storageBucket: "academy-7c5e3.firebasestorage.app",
+      messagingSenderId: "456264214675",
+      appId: "1:456264214675:web:41baac9e06e23d21474566",
+      measurementId: "G-7ZD5VC4Y7F"
+    };
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // Handle Contact Form
+    const form = document.getElementById("contactForm");
+    const msg = document.getElementById("formMessage");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      try {
+        await addDoc(collection(db, "contacts"), {
+          name,
+          email,
+          message,
+          timestamp: new Date().toISOString()
+        });
+        msg.style.color = "green";
+        msg.textContent = "✅ Thank you! Your message has been sent.";
+        form.reset();
+      } catch (err) {
+        console.error("Error:", err);
+        msg.style.color = "red";
+        msg.textContent = "⚠ Failed to send. Try again later.";
+      }
+    });
+  </script>
 </body>
 
 </html>
